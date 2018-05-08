@@ -1,15 +1,8 @@
 #!/bin/bash
 # Install tigertvnc server
 
-sudo apt-get -y install tigervnc-standalone-server expect
+sudo apt-get -qq -y install tigervnc-standalone-server expect
 
-touch /home/ubuntu/.Xauthority
-chown ubuntu:ubuntu /home/ubuntu/.Xauthority
-touch /home/ubuntu/.Xresources
-chown ubuntu:ubuntu /home/ubuntu/.Xresources
-mkdir -p /run/user/1000
-chown ubuntu:ubuntu /run/user/1000
-		
 # Set the vnc password
 expect <<EOF
 spawn vncserver

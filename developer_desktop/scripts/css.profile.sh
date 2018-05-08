@@ -4,7 +4,7 @@
 # Assumes lubuntu desktop is installed
 
 # this is how we captured the configurations for our desktop
-# tar zcvf css.profile.tgz Downloads .config .mozilla 
+# tar zcvf css.profile.tgz Downloads .config .mozilla .atom
 
 # unpack all the configurations for our desktop
 cd /home/ubuntu

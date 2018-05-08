@@ -5,7 +5,7 @@
 		"source_ami_filter": {
 			"filters": {
 				"virtualization-type": "hvm",
-				"name": "ubuntu/images/hvm-ssd/ubuntu-artful-17.10-amd64-server-*",
+				"name": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*",
 				"root-device-type": "ebs"
 			},
 			"most_recent": true
@@ -17,48 +17,48 @@
 	"provisioners": [
 		{
 			"type": "shell",
-			"script": "./update.sh"
+			"script": "./scripts/update.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./lubuntu.sh"
+			"script": "./scripts/lubuntu.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./tightvnc.sh"
+			"script": "./scripts/tightvnc.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./atom.sh"
+			"script": "./scripts/atom.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./docker.sh"
+			"script": "./scripts/docker.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./awscli.sh"
+			"script": "./scripts/awscli.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./jq.sh"
+			"script": "./scripts/jq.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./terraform.sh"
+			"script": "./scripts/terraform.sh"
 		},
 		{
 			"type": "shell",
-			"script": "./travis.sh"
+			"script": "./scripts/travis.sh"
 		},
 		{
 			"type": "file",
-			"source": "./css.profile.tgz",
+			"source": "./files/css.profile.tgz",
 			"destination": "/home/ubuntu/css.profile.tgz"
 		},
 		{
 			"type": "shell",
-			"script": "./css.profile.sh"
+			"script": "./scripts/css.profile.sh"
 		}
 	]
 }

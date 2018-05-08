@@ -1,4 +1,0 @@
-fix missing /run/user/1000
-rebuilt to ensure xfce power manager error gone
-move repository to cloudshiftstrategies
-update documentation blog
