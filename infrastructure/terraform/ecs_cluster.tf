@@ -5,5 +5,5 @@ resource "aws_ecs_cluster" "cluster" {
 }
 
 resource "aws_ecr_repository" "repository" {
-  name = "${var.projectName}_${var.stageName}_ecr"
+  name = "${var.containerName}"
 }

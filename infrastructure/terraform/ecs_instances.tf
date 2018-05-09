@@ -19,7 +19,7 @@ resource "aws_alb" "alb" {
 
 # The load balancer target group
 resource "aws_lb_target_group" "alb_tg" {
-	name_prefix		= "${var.projectName}_${var.stageName}"
+	name_prefix		= "${var.projectAcronym}${var.stageName}"
 	port			= 80
 	protocol		= "HTTP"
 	vpc_id			= "${aws_vpc.vpc.id}"

@@ -17,7 +17,10 @@ variable "projectName" {
 	default = "dockerlab"
 }
 variable "stageName" {
-	default = "dev"
+	default = "dev" # 3 chars max
+}
+variable "projectAcronym" {
+	default = "fdl" # 3 chars max
 }
 variable "costCenter" {
 	default = "1234.5678"
@@ -28,7 +31,7 @@ variable "costCenter" {
 
 # containerName hould match the container name in docker-compose.yml
 variable "containerName" {
-	default = "flask_docker_lab"
+	default = "flask_docker_lab" # MUST match docker-compose
 }
 # Use to define which tagged version in the ECR repo to deploy
 variable "containerTag" {
