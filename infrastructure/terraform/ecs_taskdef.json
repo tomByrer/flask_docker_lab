@@ -1,0 +1,15 @@
+[
+  {
+      "name":   "${task_name}",
+      "image":  "${image_name}",
+      "cpu":    ${cpu},
+      "memory": ${memory},
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": ${port},
+          "protocol": "tcp"
+        }
+      ]
+  }
+]
