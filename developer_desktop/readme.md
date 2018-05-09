@@ -25,6 +25,13 @@ The image can be deployed using terraform (deploy.tf)
 
 		packer build dev_desk.json
 
+Note, the dev_desk.json is built using the latest pre-release ubuntu 18.04,
+because the official release is only availible in the AWS marketplace. 
+Images built from the marketplace cannot be made public (required for this
+lab). If you are building this image for your personal use, you probably
+will want to change the source image name to:
+"name": "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*",
+
 6. Deploy the developer desktop using terraform
 
 		terraform init
