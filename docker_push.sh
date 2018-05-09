@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # We want this script to exit if we get any errors
 set -e
-# This script pushes the built docker image to the repository
+# Travis-ci uses this script to push the built docker image to the repository
 
 # We should have secrets file created by create_ecr_secrets.sh, encoded
 # in the dev environment and decoded in the travis environment
@@ -10,7 +10,7 @@ set -e
 . ./ecr.secrets
 
 # Log into the AWS ECR repository
-echo "Loggin into repository ${ECR_URL}"
+echo "Logging into repository ${ECR_URL}"
 docker login -u ${ECR_USER} -p ${ECR_PASS} ${ECR_URL}
 
 # Tag current build as latest
