@@ -4,3 +4,4 @@ ecr.secrets
 .terraform
 terraform.tfstate*
 *.out
+.idea/**
