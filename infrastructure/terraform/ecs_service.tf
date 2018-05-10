@@ -27,7 +27,7 @@ resource "aws_ecs_service" "ecs_service" {
 data "template_file" "ecs_taskdef" {
   template = "${file("ecs_taskdef.json")}"
   vars {
-    image_name  = "${var.containerName}:${var.containerTag}"
+    image_name  = "${aws_ecr_repository.repository.repository_url}:${var.containerTag}"
     task_name   = "${var.containerName}"
     port        = "${var.containerPort}"
     memory      = "${var.containerMem}"

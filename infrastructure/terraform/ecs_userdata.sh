@@ -2,7 +2,7 @@
 # ecs_userdata.sh - script used to initialize ecs cluster servers
 
 # Timezone
-ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime
+#ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime
 
 # Using script from http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_cloudwatch_logs.html
 # Install awslogs and the jq JSON parser
@@ -38,19 +38,19 @@ log_stream_name = ${cluster}/{container_instance_id}
 datetime_format = %Y-%m-%dT%H:%M:%S.%f
 
 [/var/log/ecs/ecs-init.log]
-file = /var/log/ecs/ecs-init.log.*
+file = /var/log/ecs/ecs-init.log*
 log_group_name = ${cluster}/var/log/ecs/ecs-init.log
 log_stream_name = ${cluster}/{container_instance_id}
 datetime_format = %Y-%m-%dT%H:%M:%SZ
 
 [/var/log/ecs/ecs-agent.log]
-file = /var/log/ecs/ecs-agent.log.*
+file = /var/log/ecs/ecs-agent.log*
 log_group_name = ${cluster}/var/log/ecs/ecs-agent.log
 log_stream_name = ${cluster}/{container_instance_id}
 datetime_format = %Y-%m-%dT%H:%M:%SZ
 
 [/var/log/ecs/audit.log]
-file = /var/log/ecs/audit.log.*
+file = /var/log/ecs/audit.log*
 log_group_name = ${cluster}/var/log/ecs/audit.log
 log_stream_name = ${cluster}/{container_instance_id}
 datetime_format = %Y-%m-%dT%H:%M:%SZ
@@ -99,6 +99,6 @@ az=$(curl -s http://instance-data/latest/meta-data/placement/availability-zone)
 region=$${az:0:$${#az} - 1}
 
 #Custom userdata script code
-${custom_userdata}
+#${custom_userdata}
 
 echo "Done"

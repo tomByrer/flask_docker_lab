@@ -31,12 +31,12 @@ variable "costCenter" {
 
 # containerName hould match the container name in docker-compose.yml
 variable "containerName" {
-	default = "flask_docker_lab" # MUST match docker-compose
+	default = "flask_docker_lab" 
 }
 # Use to define which tagged version in the ECR repo to deploy
 variable "containerTag" {
-	#default = "latest"
-	default = "v1.0"
+	#default = "v1.0"
+	default = "latest"
 }
 # The port on which our container is listening
 variable "containerPort" {

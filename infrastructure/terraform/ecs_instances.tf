@@ -111,6 +111,7 @@ resource "aws_launch_configuration" "web_lc" {
 	instance_type		= "${var.ecsInstanceType}"
 	iam_instance_profile = "${aws_iam_instance_profile.ecs.name}"
 	user_data           = "${data.template_file.ecs_userdata.rendered}"
+	#key_name 			= "fdlab"
 	lifecycle {
 		create_before_destroy = true
 	}
@@ -132,7 +133,7 @@ resource "aws_autoscaling_group" "web_asg" {
 	# Tags that should be added to spawned instances
 	tag {
 		key                 = "Name"
-		value               = "${var.projectName}-${var.stageName}-webinst"
+		value               = "${var.projectName}-${var.stageName}-ecsinst"
 		propagate_at_launch = true
 	}
 	tag {
@@ -202,7 +203,8 @@ resource "aws_security_group" "web_sg" {
 }
 
 # Rule to allow web servers to talk to public (load balancer) subnet only
-resource "aws_security_group_rule" "web_sg_8000in" {
+# over ephemeral port
+resource "aws_security_group_rule" "web_sg_ephIn" {
 	type            = "ingress"
 	from_port       = 32768
 	to_port         = 61000
