@@ -35,8 +35,8 @@ variable "containerName" {
 }
 # Use to define which tagged version in the ECR repo to deploy
 variable "containerTag" {
-	#default = "v1.0"
-	default = "latest"
+	#default = "latest"
+	default = "v1.0"
 }
 # The port on which our container is listening
 variable "containerPort" {
