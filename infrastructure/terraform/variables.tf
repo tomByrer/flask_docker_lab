@@ -52,7 +52,8 @@ variable "containerMem" {
 }
 # How much cpu to allocate to each conatiner
 variable "containerCPU" {
-	default = 256 # (.25 CPU)
+	#default = 256 # (.25 CPU)
+	default = 0
 }
 
 #################################################

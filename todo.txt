@@ -5,3 +5,7 @@
 - move infrastructure/travis.template to templates dir
 - consider moving infrastructure/terraform to terraform (delete infra)
 - merge tfcleanup to master
+
+- figure out why target group has port 80 in failed state
+- figure out why update of service definition doesnt go to 200%a (CPU)
+
