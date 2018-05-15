@@ -1,10 +1,4 @@
 # todo.txt 
-- retest from top to bottom
-- update documentation
 - move docker_push.sh and create_ecr_secrets to scripts dir
 - move infrastructure/travis.template to templates dir
 - consider moving infrastructure/terraform to terraform (delete infra)
-
-- figure out why target group has port 80 in failed state
-- figure out why update of service definition doesnt go to 200%a (CPU)
-
