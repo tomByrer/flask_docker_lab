@@ -48,7 +48,7 @@ variable "containerCount" {
 }
 # How much memory to allocate to each conatiner
 variable "containerMem" {
-	default = 512
+	default = 256
 }
 # How much cpu to allocate to each conatiner
 variable "containerCPU" {
