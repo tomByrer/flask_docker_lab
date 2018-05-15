@@ -122,7 +122,6 @@ resource "aws_autoscaling_group" "web_asg" {
 	name                 = "${var.projectName}-${var.stageName}-web-asg"
 	vpc_zone_identifier  = ["${aws_subnet.app_subnet.*.id}"]
 	launch_configuration = "${aws_launch_configuration.web_lc.name}"
-	target_group_arns	 = ["${aws_lb_target_group.alb_tg.arn}"]
 	min_size             = "${var.tgtGrpMinSize}"
 	max_size             = "${var.tgtGrpMaxSize}"
 	desired_capacity     = "${var.tgtGrpDesiredSize}"
